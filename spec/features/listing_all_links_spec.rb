@@ -13,7 +13,7 @@ feature 'User browses a list of links' do
   end
 
   scenario 'filtered by a tag' do
-    visit '/tage/search'
+    visit '/tags/search'
     expect(page).not_to have_content('Makers Academy')
     expect(page).not_to have_content('Code.org')
     expect(page).to have_content('Google')
