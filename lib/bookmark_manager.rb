@@ -7,6 +7,7 @@ env = ENV['RACK_ENV'] || 'development'
 DataMapper.setup(:default, "postgres://localhost/bookmark_manager_#{env}")
 require './lib/models/link' # this needs to be done after datamapper is initialised
 require './lib/models/tag'
+require './lib/models/user'
 
 DataMapper.finalize # After declaring your models, you should finalise them
 # However, the database tables don't exist yet. Let's tell datamapper to create them
