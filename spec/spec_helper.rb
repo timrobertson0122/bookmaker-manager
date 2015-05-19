@@ -22,9 +22,9 @@ require 'capybara/rspec'
 # users commonly want.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
-RSpec.configure do |config|
+ Capybara.app = Sinatra::Application
 
-  Capybara.app = BookmarkManager
+RSpec.configure do |config|
 
   config.before(:suite) do
     DatabaseCleaner.strategy = :transaction

@@ -7,4 +7,4 @@ DataMapper.setup(:default, "postgres://localhost/bookmark_manager_#{env}")
 
 DataMapper.finalize # After declaring your models, you should finalise them
 # However, the database tables don't exist yet. Let's tell datamapper to create them
-DataMapper.auto_upgrade!
+
