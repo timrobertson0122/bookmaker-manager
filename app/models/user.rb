@@ -41,6 +41,14 @@ class User
   # if this user exists and the password provided matches
   # the one we have password_digest for, everything's fine
 
+# POTENTIAL PLACE FOR REPLACEMENT PW STUFF?:
+            # user = User.first(email: email)
+            # # avoid having to memorise ascii codes
+            # user.password_token = (1..64).map{('A'..'Z').to_a.sample}.join
+            # user.password_token_timestamp = Time.now
+            # user.save
+
+
   # The Password.new returns an object that overrides the ==
   # method. Instead of comparing two passwords directly
   # (which is impossible because we only have a one-way hash)

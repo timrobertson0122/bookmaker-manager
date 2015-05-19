@@ -62,7 +62,13 @@ feature 'User signs out' do
   end
 end
 
-
+feature 'User forgets password' do
+  scenario 'User requests replacement password' do
+    visit '/sessions/new'
+    expect(page).to have_content('Forgot password?')
+    click_button 'request new password'
+  end
+end
 
 
 
