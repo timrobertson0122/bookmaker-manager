@@ -26,7 +26,7 @@ class User
   # and password_confirmation are the same
   # read more about it in the documentation
   # http://datamapper.org/docs/validations.html
-  validates_uniqueness_of :email # In datamapper's case, creating a unique index automatically implies the necessity of the validation, so this code would be unnecessary. When using other ORMs, double check if creating a unique index implies a model-level validation.
+  # validates_uniqueness_of :email # In datamapper's case, creating a unique index automatically implies the necessity of the validation, so this code would be unnecessary. When using other ORMs, double check if creating a unique index implies a model-level validation.
   validates_confirmation_of :password
 
 
