@@ -1,4 +1,3 @@
-require 'rubygems'
-require 'app/bookmark_manager.rb'
+require './app/bookmark_manager.rb'
 
 run Sinatra::Application
