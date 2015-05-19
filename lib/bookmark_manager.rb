@@ -49,6 +49,10 @@ set :session_secret, 'super secret'
     redirect to ('/')
   end
 
+  helpers do
+
+    def current_user
+      @
 
 
   # start the server if ruby file executed directly
