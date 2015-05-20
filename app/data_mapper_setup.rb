@@ -10,4 +10,5 @@ require_relative 'models/user.rb'
 
 DataMapper.finalize # After declaring your models, you should finalise them
 # However, the database tables don't exist yet. Let's tell datamapper to create them
+DataMapper.auto_upgrade!
 
