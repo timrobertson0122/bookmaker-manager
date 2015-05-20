@@ -2,6 +2,11 @@ module BookmarkManager
   module Routes
     class Links < Base
 
+      get '/' do
+      @links = Link.all
+      erb :index
+      end
+
       post '/links' do
         url = params['url']
         title = params['title']
@@ -13,6 +18,10 @@ module BookmarkManager
         end
 
         redirect to('/')
+      end
+
+      get '/links/new' do
+        erb :"links/new"
       end
 
     end
