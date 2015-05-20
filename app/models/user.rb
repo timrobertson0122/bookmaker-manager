@@ -11,6 +11,8 @@ class User
   # 50 characters by default
   # and it's not enough for the hash and salt
   property :password_digest, Text
+  property :password_token, String
+  property :password_token_timestamp, Time
   # when assigned the password, we don't store it directly
   # instead, we generate a password digest, that looks like this:
   # "$2a$10$vI8aWBnW3fID.ZQ4/zo1G.q1lRps.9cGLcZEiGDMVr5yUP1KUOYTa"
@@ -40,14 +42,6 @@ class User
     user = first(email: email)
   # if this user exists and the password provided matches
   # the one we have password_digest for, everything's fine
-
-# POTENTIAL PLACE FOR REPLACEMENT PW STUFF?:
-            # user = User.first(email: email)
-            # # avoid having to memorise ascii codes
-            # user.password_token = (1..64).map{('A'..'Z').to_a.sample}.join
-            # user.password_token_timestamp = Time.now
-            # user.save
-
 
   # The Password.new returns an object that overrides the ==
   # method. Instead of comparing two passwords directly

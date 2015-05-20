@@ -22,7 +22,7 @@ require 'capybara/rspec'
 # users commonly want.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
- Capybara.app = Sinatra::Application
+ Capybara.app = BookmarkManager::Application
 
 RSpec.configure do |config|
 

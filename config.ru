@@ -1,3 +1,3 @@
 require './app/bookmark_manager.rb'
 
-run Sinatra::Application
+run BookmarkManager::Application
