@@ -24,6 +24,14 @@ module BookmarkManager
         redirect to('/')
       end
 
+      post '/password/reset' do
+        email = params[:forgot]
+        user = User.first(email: email)
+        user.password_token = (1..50).map{('A'..'Z').to_a.sample}.join
+        user.password_token_timestamp = Time.now
+        user.save
+        redirect to('/sessions/new')
+      end
     end
   end
 end

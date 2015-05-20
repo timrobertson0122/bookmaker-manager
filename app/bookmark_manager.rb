@@ -2,6 +2,8 @@ require 'sinatra/base'
 require 'data_mapper'
 require 'rack-flash'
 require 'sinatra/partial'
+require 'byebug'
+
 require_relative 'models/link'
 require_relative 'models/tag'
 require_relative 'models/user'
