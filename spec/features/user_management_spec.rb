@@ -1,4 +1,4 @@
-require 'spec_helper'
+  require 'spec_helper'
 require_relative 'helpers/session'
 
 include SessionHelpers
@@ -27,9 +27,7 @@ end
 feature 'User signs in' do
 
   before(:each) do
-    User.create(email: 'test@test.com',
-                password: 'test',
-                password_confirmation: 'test')
+    User.create(email: 'test@test.com', password: 'test', password_confirmation: 'test')
   end
 
   scenario 'with correct credentials' do
@@ -72,6 +70,7 @@ feature 'User forgets password' do
     expect(page).to have_content('Forgot password?')
     fill_in :forgot, with: 'test@test.com'
     click_button 'new password'
+    expect(page).to have_content('Password recovery e-mail sent!')
   end
 end
 

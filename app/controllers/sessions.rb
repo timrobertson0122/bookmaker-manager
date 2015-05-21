@@ -25,11 +25,12 @@ module BookmarkManager
       end
 
       post '/password/reset' do
-        email = params[:forgot]
-        user = User.first(email: email)
-        user.password_token = (1..50).map{('A'..'Z').to_a.sample}.join
+        @email = params[:forgot]
+        user = User.first(email: @email)
+        user.password_token = (1..64).map{('A'..'Z').to_a.sample}.join
         user.password_token_timestamp = Time.now
         user.save
+        flash[:notice] = 'Password recovery e-mail sent!'
         redirect to('/sessions/new')
       end
     end
