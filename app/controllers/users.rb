@@ -18,7 +18,7 @@ module BookmarkManager
         end
       end
 
-      post 'users/reset_password' do
+      post '/users/reset_password' do
         @email = params[:email]
         user = User.first(email: @email)
         user.password_token = (1..64).map{('A'..'Z').to_a.sample}.join
