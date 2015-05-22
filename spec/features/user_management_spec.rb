@@ -68,8 +68,10 @@ feature 'User forgets password' do
   scenario 'User requests replacement password' do
     visit '/sessions/new'
     expect(page).to have_content('Forgot password?')
-    fill_in :forgot, with: 'test@test.com'
-    click_button 'new password'
+    within '#forgot' do
+      fill_in :email, with: 'test@test.com'
+    end
+    click_button 'Request new password'
     expect(page).to have_content('Password recovery e-mail sent!')
   end
 end

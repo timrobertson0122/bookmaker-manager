@@ -6,7 +6,7 @@ require 'sinatra/partial'
 require_relative 'models/link'
 require_relative 'models/tag'
 require_relative 'models/user'
-require_relative 'helpers/application'
+# require_relative 'helpers/application'
 require_relative 'data_mapper_setup'
 
 require_relative 'controllers/base'
@@ -27,6 +27,8 @@ module BookmarkManager
     use Routes::Users
     use Routes::Sessions
     use Routes::Tags
+    # use Routes::Email
+    use Routes::Base
 
     set :partial_template_engine, :erb
     set :views, Proc.new { File.join('app', 'views') }

@@ -29,7 +29,7 @@ module BookmarkManager
       end
 
       get '/users/reset_password' do
-        erb :reset_password
+        erb :'users/reset_password'
       end
 
       get '/users/new_password/:token' do
