@@ -24,6 +24,7 @@ module BookmarkManager
         user.password_token = (1..64).map{('A'..'Z').to_a.sample}.join
         user.password_token_timestamp = Time.now
         user.save
+        user.receive_password_token_email
         flash[:notice] = 'Password recovery e-mail sent!'
         redirect to('/sessions/new')
       end
