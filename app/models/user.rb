@@ -1,7 +1,6 @@
 require 'bcrypt'
 
 class User
-
   include DataMapper::Resource
 
   property :id, Serial
@@ -33,6 +32,7 @@ class User
   end
 
   def receive_password_token_email
+    BookmarkManager::Application.email_handler.send_email_to self
   end
 
 end

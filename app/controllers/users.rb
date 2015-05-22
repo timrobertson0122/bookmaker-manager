@@ -49,9 +49,6 @@ module BookmarkManager
         #how does the server/database know that the password has been reset?
         redirect to('/sessions/new')
       end
-
-
-
     end
   end
 end

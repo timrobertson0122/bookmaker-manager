@@ -75,7 +75,7 @@ feature 'User forgets password' do
       fill_in :email, with: user.email
     end
 
-    expect_any_instance_of(User).to receive(:receive_password_token_email)
+    expect(BookmarkManager::Application.email_handler).to receive(:send_email_to).with(anything)
 
     click_button 'Request new password'
     expect(page).to have_content('Password recovery e-mail sent!')

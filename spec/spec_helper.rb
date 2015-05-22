@@ -23,7 +23,14 @@ require 'byebug'
 # users commonly want.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
- Capybara.app = BookmarkManager::Application
+Capybara.app = BookmarkManager::Application
+
+class MailgunMock
+  def send_email_to user
+  end
+end
+
+BookmarkManager::Application.email_handler = MailgunMock.new
 
 RSpec.configure do |config|
 

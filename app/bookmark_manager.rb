@@ -22,6 +22,7 @@ module BookmarkManager
     set :session_secret, 'super secret'
     use Rack::Flash
     use Rack::MethodOverride
+    set :email_handler, MailgunWrapper.new
 
     use Routes::Links
     use Routes::Users
@@ -33,6 +34,5 @@ module BookmarkManager
     set :partial_template_engine, :erb
     set :views, Proc.new { File.join('app', 'views') }
     set :public, Proc.new { File.join('app','public') }
-
   end
 end
